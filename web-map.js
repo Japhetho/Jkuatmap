@@ -18,8 +18,8 @@ var control, controls = [];
             new OpenLayers.Control.KeyboardDefaults()
         ],
         maxExtent: extents,
-        minExtent: "auto"
-        //restrictedExtent: extents /*one cannot pan outside the specified extent*/
+        minExtent: "auto",
+        restrictedExtent: extents /*one cannot pan outside the specified extent*/
     },
         {projection: new OpenLayers.Projection("EPSG:900913")}, /*specifying the projection*/
     
@@ -28,17 +28,12 @@ var control, controls = [];
         {allOverlays: true} /*all other data added will overlay on the basemap*/
         );
 
-
-   
-
- //var google_sat = new OpenLayers.Layer.Google("Google Satellite",{type:google.maps.MapTypeId.SATELLITE,numZoomLevels:40});
-
- var OSM = new OpenLayers.Layer.OSM("OpenStreetMap");  /*loading the OSM basemap*/
+var OSM = new OpenLayers.Layer.OSM("OpenStreetMap");  /*loading the OSM basemap*/
 
 
 /*loading the overlays from GeoServer.jkuat_map is the workspace name. Loading the layer as a WMS*/
 
- var buildings = new OpenLayers.Layer.WMS (
+var buildings = new OpenLayers.Layer.WMS (
         "Jkuat Buildings",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:buildings",transparent: true, format: "image/gif"},
@@ -46,56 +41,56 @@ var control, controls = [];
         {'displayInLayerSwitcher':true}
 );
 
- var colleges = new OpenLayers.Layer.WMS (
+var colleges = new OpenLayers.Layer.WMS (
         "Jkuat Colleges",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:colleges",transparent: true, format: "image/gif"},
         {visibility: false},
         {'displayInLayerSwitcher':true}
 );
- var farms = new OpenLayers.Layer.WMS (
+var farms = new OpenLayers.Layer.WMS (
         "Jkuat Farms",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:farms",transparent: true, format: "image/gif"},
         {visibility: false},
         {'displayInLayerSwitcher':true}
 );
- var gates = new OpenLayers.Layer.WMS (
+var gates = new OpenLayers.Layer.WMS (
         "Jkuat Gates",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:gates",transparent: true, format: "image/gif"},
         {visibility: false},
         {'displayInLayerSwitcher':true}
 );
- var newbuildings = new OpenLayers.Layer.WMS (
+var newbuildings = new OpenLayers.Layer.WMS (
         "Jkuat New Buildings",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:newbuildings",transparent: true, format: "image/gif"},
         {visibility: false},
         {'displayInLayerSwitcher':true}
 );
- var parkinglot = new OpenLayers.Layer.WMS (
+var parkinglot = new OpenLayers.Layer.WMS (
         "Jkuat Parking lots",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:parkinglot",transparent: true, format: "image/gif"},
         {visibility: false},
         {'displayInLayerSwitcher':true}
 );
- var pitches = new OpenLayers.Layer.WMS (
+var pitches = new OpenLayers.Layer.WMS (
         "Jkuat Pitches",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:pitches",transparent: true, format: "image/gif"},
         {visibility: false},
         {'displayInLayerSwitcher':true}
 );
- var streets = new OpenLayers.Layer.WMS (
+var streets = new OpenLayers.Layer.WMS (
         "Jkuat Streets",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:streets",transparent: true, format: "image/gif"},
         {visibility: false},
         {'displayInLayerSwitcher':true}
 );
- var vegetation = new OpenLayers.Layer.WMS (
+var vegetation = new OpenLayers.Layer.WMS (
         "Jkuat Vegetation",
         "http://localhost:8080/geoserver/jkuat_map/wms",
         {layers:"jkuat_map:vegetation",transparent: true, format: "image/gif"},
@@ -107,7 +102,7 @@ var control, controls = [];
 
 /*adding the data to the map object*/ 
 
-map.addLayers([OSM,buildings,colleges,farms,gates,newbuildings,parkinglot,pitches,streets,vegetation,]);
+map.addLayers([OSM,buildings,colleges,farms,gates,newbuildings,parkinglot,pitches,streets,vegetation]);
 
 /*specifying the center of the map and a zoom level of 13*/
 
