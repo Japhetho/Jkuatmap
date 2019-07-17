@@ -36,7 +36,7 @@ var control, controls = [];
  var OSM = new OpenLayers.Layer.OSM("OpenStreetMap");  /*loading the OSM basemap*/
 
 
-/*loading the overlays from GeoServer.web_map is the workspace name. Loading the layer as a WMS*/
+/*loading the overlays from GeoServer.jkuat_map is the workspace name. Loading the layer as a WMS*/
 
  var buildings = new OpenLayers.Layer.WMS (
         "Jkuat Buildings",
