@@ -18,8 +18,8 @@ var control, controls = [];
             new OpenLayers.Control.KeyboardDefaults()
         ],
         maxExtent: extents,
-        minExtent: "auto",
-        restrictedExtent: extents /*one cannot pan outside the specified extent*/
+        minExtent: "auto"
+        #restrictedExtent: extents /*one cannot pan outside the specified extent*/
     },
         {projection: new OpenLayers.Projection("EPSG:900913")}, /*specifying the projection*/
     
@@ -102,7 +102,7 @@ var vegetation = new OpenLayers.Layer.WMS (
 
 /*adding the data to the map object*/ 
 
-map.addLayers([OSM,buildings,colleges,farms,gates,newbuildings,parkinglot,pitches,streets,vegetation]);
+map.addLayers([OSM,buildings,colleges,farms,gates,newbuildings,parkinglot,pitches,streets,vegetation,]);
 
 /*specifying the center of the map and a zoom level of 13*/
 
