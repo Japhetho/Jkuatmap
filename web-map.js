@@ -102,7 +102,7 @@ var vegetation = new OpenLayers.Layer.WMS (
 
 /*adding the data to the map object*/ 
 
-map.addLayers([OSM,buildings,colleges,farms,gates,newbuildings,parkinglot,pitches,streets,vegetation,]);
+map.addLayers([OSM,buildings,colleges,farms,]);
 
 /*specifying the center of the map and a zoom level of 13*/
 
