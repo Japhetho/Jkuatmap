@@ -19,7 +19,7 @@ var control, controls = [];
         ],
         maxExtent: extents,
         minExtent: "auto"
-        #restrictedExtent: extents /*one cannot pan outside the specified extent*/
+        //restrictedExtent: extents /*one cannot pan outside the specified extent*/
     },
         {projection: new OpenLayers.Projection("EPSG:900913")}, /*specifying the projection*/
     
